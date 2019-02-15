@@ -12,7 +12,7 @@ Get-WmiObject  -List "*printer*"
 
 #4.	Вывести информацию об операционной системе, не менее 10 полей.
 Get-WmiObject Win32_OperatingSystem | select status, version, bootdevice, `
-Currenttimezone, localdatetime, freephysicalmemory, installdate, csname,` producttype,    SystemDrive
+Currenttimezone, localdatetime, freephysicalmemory, installdate, csname, producttype,SystemDrive
 
 
 #5.	Получить информацию о BIOS.
@@ -58,7 +58,7 @@ register-wmiEvent -query "select * from __instancecreationevent within 5
 where targetinstance isa 'Win32_Process' and targetinstance.name='WINWORD.exe'" `
 -sourceIdentifier "ProcessStarted" -Action { Write-Host "Process WINWORD.exe was run" } 
 
-
+# Get-EventSubscriber | Unregister-Event
 
 
 
